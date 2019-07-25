@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+select {
+position: center;
+width:160px;
+height:55px;
+font-size:25px;
+
+
+ 
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+<script type="text/javascript">
+
+    function showImage(){
+        
+		
+		var e = document.getElementById("countries");
+        var s = e.options[e.selectedIndex].value;
+		if(s=="india")
+		{
+		document.getElementById('c1').style.visibility="visible";
+		document.getElementById('c2').style.visibility="hidden";
+		document.getElementById('c3').style.visibility="hidden";
+		document.getElementById('c4').style.visibility="hidden";
+		document.getElementById('c5').style.visibility="hidden";
+		document.getElementById('l2').style.visibility="hidden";
+		document.getElementById('l3').style.visibility="hidden";
+		document.getElementById('l4').style.visibility="hidden";
+		document.getElementById('l5').style.visibility="hidden";
+		document.getElementById('l1').style.visibility="visible";
+		
+		}
+		else if(s=="aus")
+		{
+		document.getElementById('c2').style.visibility="visible";
+		document.getElementById('c1').style.visibility="hidden";
+		document.getElementById('c3').style.visibility="hidden";
+		document.getElementById('c4').style.visibility="hidden";
+		document.getElementById('c5').style.visibility="hidden";
+		document.getElementById('l1').style.visibility="hidden";
+		document.getElementById('l3').style.visibility="hidden";
+		document.getElementById('l4').style.visibility="hidden";
+		document.getElementById('l5').style.visibility="hidden";
+		document.getElementById('l2').style.visibility="visible";
+		
+		}
+		else if(s=="nz")
+		{
+		document.getElementById('c3').style.visibility="visible";
+		document.getElementById('c2').style.visibility="hidden";
+		document.getElementById('c1').style.visibility="hidden";
+		document.getElementById('c4').style.visibility="hidden";
+		document.getElementById('c5').style.visibility="hidden";
+		document.getElementById('l1').style.visibility="hidden";
+		document.getElementById('l2').style.visibility="hidden";
+		document.getElementById('l4').style.visibility="hidden";
+		document.getElementById('l5').style.visibility="hidden";
+		document.getElementById('l3').style.visibility="visible";
+		
+		}
+		else if(s=="us")
+		{
+		document.getElementById('c4').style.visibility="visible";
+		document.getElementById('c1').style.visibility="hidden";
+		document.getElementById('c2').style.visibility="hidden";
+		document.getElementById('c3').style.visibility="hidden";
+		document.getElementById('c5').style.visibility="hidden";
+		document.getElementById('l1').style.visibility="hidden";
+		document.getElementById('l2').style.visibility="hidden";
+		document.getElementById('l3').style.visibility="hidden";
+		document.getElementById('l5').style.visibility="hidden";
+		document.getElementById('l4').style.visibility="visible";
+		
+		}
+		else
+		{
+		document.getElementById('c5').style.visibility="visible";
+		document.getElementById('c1').style.visibility="hidden";
+		document.getElementById('c2').style.visibility="hidden";
+		document.getElementById('c3').style.visibility="hidden";
+		document.getElementById('c4').style.visibility="hidden";
+		document.getElementById('l1').style.visibility="hidden";
+		document.getElementById('l2').style.visibility="hidden";
+		document.getElementById('l4').style.visibility="hidden";
+		document.getElementById('l3').style.visibility="hidden";
+		document.getElementById('l5').style.visibility="visible";
+		
+		}
+    }   
+
+    </script>
+</head>
+<body  background="countryy.jpg">
+
+<h1 style="text-align:center;background-color:white;"> COUNTRY INFORMATION </h1>
+<form action="/action_page.php">
+  <select name="countries" id="countries" >
+    <option id="india" value="india">India</option>
+    <option id="aus" value="aus">Australia</option>
+    <option id="nz" value="nz">New Zealand</option>
+    <option id="us" value="us">USA</option>
+	<option id="canada" value="canada">Canada</option>
+  </select>
+<input type="button" value="Show" onclick="showImage();"/>
+
+
+<div class="row">
+  <div class="column">
+  <a href="india.html">
+    <div class="card" id="c1" title="tap card to get information" style="visibility:hidden">
+	<h1> INDIA</h1>
+      <img src="india.jpg"  id="l1"height="100px" width="100px"/>
+	  
+    </div></a>
+  </div>
+
+  <div class="column">
+  <a href="australia.html">
+    <div class="card" id="c2" title="tap card to get information" style="visibility:hidden">
+      <h3>AUSTRALIA</h3>
+	 
+      <img src="auss.jpg"  id="l2"height="100px" width="100px"/>
+	  
+    </div></a>
+  </div>
+  
+  <div class="column">
+   <a href="newzealand.html">
+    <div class="card"id="c3" title="tap card to get information"style="visibility:hidden">
+      <h3>NEW ZEALAND</h3>
+	  
+      <img src="nz.jpg" id="l3"height="100px" width="100px"/>
+	  
+    </div></a>
+  </div>
+  
+  <div class="column">
+  <a href="usa.html">
+    <div class="card"id="c4"title="tap card to get information" style="visibility:hidden">
+      <h3>US</h3>
+	  
+      <img src="us.jpg" id="l4"height="100px" width="100px"/>
+	  
+    </div></a>
+  </div>
+  <div class="column">
+   <a href="canada.html">
+    <div class="card"id="c5"title="tap card to get information" style="visibility:hidden">
+      <h3>CANADA</h3>
+	  <a href="canada.html">
+      <img src="can.jpg"id="l5"height="100px" width="100px"/>
+	  
+    </div></a>
+  </div>
+</div>
+
+</body>
+</html>
